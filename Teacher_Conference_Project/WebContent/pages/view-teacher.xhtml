@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+	<h:head>
+	</h:head>
+	<h:body>
+		<h:form>
+			<p:layout style="min-width:1200px;min-height:600px;">
+
+				<p:layoutUnit position="west" resizable="true" size="200">
+					<ui:include src="/menu.xhtml" />
+				</p:layoutUnit>
+				
+				<p:layoutUnit position="center">
+				<h1>View Teacher</h1>
+				<p:dataTable var="teacher" value="#{teacherBean.teachers}">
+				<p:column headerText="Index #">
+					<h:outputText value="#{teacher.indexNo}" />
+				</p:column>
+				
+				<p:column headerText="Name">
+					<h:outputText value="#{teacher.firstName}         #{teacher.lastName}" />
+				</p:column>
+				
+				<p:column headerText="Address">
+					<h:outputText value="#{teacher.address}" />
+				</p:column>
+				
+				<p:column headerText="NIC">
+					<h:outputText value="#{teacher.nic}" />
+				</p:column>
+				
+				<p:column headerText="Degree">
+				    <h:outputText value="#{teacher.degree}" />
+				 </p:column>
+				 
+				<p:column headerText="City">
+				    <h:outputText value="#{teacher.city}" />
+				</p:column>
+				
+				<p:column headerText="Grade"> 
+				    <h:outputText value="#{teacher.grade}" />
+				</p:column>    
+				
+				<p:column headerText="Gender"> 
+				   <h:outputText value="#{teacher.gender}" />
+				</p:column>
+				
+				</p:dataTable>
+				</p:layoutUnit>
+			</p:layout>
+		</h:form>
+	</h:body>
+</f:view>
+</html>	

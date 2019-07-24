@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+	<h:head>
+	</h:head>
+	<h:body>
+		<h:form>
+			<p:layout style="min-width:1400px;min-height:700px;">
+				<p:layoutUnit position="west" resizable="true" size="200">
+					<ui:include src="/menu.xhtml" />
+				</p:layoutUnit>
+				<p:layoutUnit position="center">
+					<p:messages id="msg" showDetail="true" autoUpdate="false"
+						closable="true" />
+					<p:growl id="growl" showDetail="true" sticky="true" />
+					<p:panelGrid columns="2">
+						<f:facet name="header">
+				Create Conference
+				</f:facet>
+
+						<h:outputLabel value="Seq #: " />
+						<p:inputText id="seqNo" value="#{confBean.conference.seqNo}" />
+
+						<h:outputLabel value="Name: " />
+						<p:inputText id="name" value="#{confBean.conference.name}" />
+
+						<h:outputLabel value="Desc: " />
+						<p:inputText id="desc" value="#{confBean.conference.desc}" />
+
+						<h:outputLabel value="Location: " />
+						<p:inputText id="location" value="#{confBean.conference.location}" />
+
+						<h:outputLabel value="Date: " />
+						<p:calendar navigator="none" value="#{confBean.conference.date}" />
+
+						<h:outputLabel value="Endtime: " />
+						<p:calendar id="endtime" value="#{confBean.conference.endtime}"
+							pattern="HH:mm:ss" timeOnly="true"  timeZone="ASIA/Colombo"/>
+
+						<h:outputLabel value="Startime: " />
+						<p:calendar id="starttime"
+							value="#{confBean.conference.starttime}" pattern="HH:mm:ss"
+							timeOnly="true" timeZone="ASIA/Colombo" />
+
+						<f:facet name="footer">
+							<p:commandButton value="Submit" icon="ui-icon-check" id="submit"
+								update="growl" actionListener="#{confBean.submitData}" />
+						</f:facet>
+					</p:panelGrid>
+				</p:layoutUnit>
+			</p:layout>
+		</h:form>
+	</h:body>
+</f:view>
+</html>

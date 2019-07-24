@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+	<h:head>
+	</h:head>
+	<h:body>
+		<h:form>
+			<p:panelMenu>    
+<p:submenu label="Teacher">
+                          <p:menuitem value="Create" icon="ui-icon-home"
+                          url="/pages/create-teacher.xhtml?param=create" />
+                          <p:menuitem value="View" icon="ui-icon-document"
+						  url="/pages/view-teacher.xhtml?param=view" />
+</p:submenu>
+<p:submenu label="Conference">		
+ 				          <p:menuitem value="Create" icon="ui-icon-home"
+                          url="/pages/create-conference.xhtml?param=create" />
+                          <p:menuitem value="View" icon="ui-icon-document"
+						  url="/pages/view-conference.xhtml?param=view" />
+</p:submenu>
+			</p:panelMenu>
+		</h:form>
+	</h:body>
+</f:view>
+</html>						  

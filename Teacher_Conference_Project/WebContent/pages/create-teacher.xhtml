@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+	<h:head>
+	</h:head>
+	<h:body>
+		<h:form>
+			<p:layout style="min-width:1200px;min-height:600px;">
+				<p:layoutUnit position="west" resizable="true" size="200">
+					<ui:include src="/menu.xhtml" />
+				</p:layoutUnit>
+				<p:layoutUnit position="center">
+					<p:messages id="msg" showDetail="true" autoUpdate="false"
+					closable="true" />
+					<p:growl id="growl" showDetail="true" sticky="true" />
+					<p:panelGrid columns="2">
+					<f:facet name="header">
+					Create Teacher
+					</f:facet>
+					
+					<h:outputLabel value="Index #: " />
+					<p:inputText id="indexNo" value="#{teacherBean.teacher.indexNo}" />    
+					     
+					<h:outputLabel value="First Name: " />
+					<p:inputText id="firstName" value="#{teacherBean.teacher.firstName}" />
+					
+					<h:outputLabel value="Last Name: " />
+					<p:inputText id="lastName" value="#{teacherBean.teacher.lastName}" />
+					
+					<h:outputLabel value="Address: " />
+					<p:inputTextarea id="address" rows="4" cols="40"
+					value="#{teacherBean.teacher.address}" />
+					
+					<h:outputLabel value="NIC: " />
+					<p:inputText id="nic" value="#{teacherBean.teacher.nic}" />
+					
+					<h:outputLabel value="Degree: " />
+					<p:inputText id="degree" value="#{teacherBean.teacher.degree}" />
+					
+					<h:outputLabel value="City: " />
+					<p:inputText id="city" value="#{teacherBean.teacher.city}" />
+					
+					<h:outputLabel value="Grade: " />
+					<p:inputText id="grade" value="#{teacherBean.teacher.grade}" />
+					
+					<h:outputLabel value="Gender: " />
+					<p:inputText id="gender" value="#{teacherBean.teacher.gender}" />
+					
+					<f:facet name="footer">
+							<p:commandButton value="Submit" icon="ui-icon-check" id="submit"
+						update="growl" actionListener="#{teacherBean.submitData}" />
+					</f:facet>
+					</p:panelGrid>
+				</p:layoutUnit>
+			</p:layout>
+		</h:form>
+	</h:body>
+</f:view>
+</html>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
